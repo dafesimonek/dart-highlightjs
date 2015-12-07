@@ -1,1 +1,65 @@
-Hello Dafe
+<!DOCTYPE html>
+
+<!--
+  Copyright (c) 2015, <your name>. All rights reserved. Use of this source code
+  is governed by a BSD-style license that can be found in the LICENSE file.
+-->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+    <title>Dart HighlightJs Interop Example</title>
+
+    <!-- highlightjs.org inclusion -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
+
+    <!-- our own js function -->
+    <script src="test.js"></script>
+
+    <script src="main.dart" type="application/dart"></script>
+    <script src="packages/browser/dart.js"></script>
+</head>
+
+<body>
+
+    <div id="code">
+        <pre><code>
+            import 'dart:html';
+            import 'package:js/js.dart';
+
+            @JS('hljs')
+            external Hljs get hljs;
+
+            @JS()
+            @anonymous
+            class Hljs {
+              external void initHighlighting();
+              external List<String> listLanguages();
+            }
+
+            void main() {
+              ButtonElement highlighter = querySelector('#highlight');
+              ButtonElement showLanguages = querySelector('#showLanguages');
+
+              highlighter.onClick.listen((evt) {
+                hljs.initHighlighting();
+              });
+
+              showLanguages.onClick.listen((evt) {
+                window.alert('Default supported languages: ${hljs.listLanguages().join(', ')}');
+              });
+            }
+
+    </code></pre>
+    </div>
+
+    <button id="highlight">Highlight</button>
+    <button id="showLanguages">Show Languages</button>
+
+
+</body>
+</html>
