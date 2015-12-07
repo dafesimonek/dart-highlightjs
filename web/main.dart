@@ -5,13 +5,13 @@ import 'dart:html';
 import 'package:js/js.dart';
 
 /** Direct mapping to our own js function from test.js */
-@JS("jsAlert")
+@JS('jsAlert')
 external jsAlert(String msg);
 
 /** Use dart getter for accessing published js objects,
  * hljs object from highlightjs lib in this case
  */
-@JS("hljs")
+@JS('hljs')
 external Hljs get hljs;
 
 /** Mapping to highlightjs API, see http://highlightjs.readthedocs.org/en/latest/api.html
@@ -33,8 +33,8 @@ class Hljs {
 
 void main() {
 
-  var highlighter = querySelector('#highlight') as ButtonElement;
-  var showLanguages = querySelector('#showLanguages') as ButtonElement;
+  ButtonElement highlighter = querySelector('#highlight');
+  ButtonElement showLanguages = querySelector('#showLanguages');
 
   // highlight by calling into jshl library
   highlighter.onClick.listen((evt) {
@@ -43,8 +43,7 @@ void main() {
 
   // show jshl supported languages, combination of js interop calls
   showLanguages.onClick.listen((evt) {
-    //jsAlert('Default supported languages: ${hljs.listLanguages().join(", ")}');
-    window.alert('Default supported languages: ${hljs.listLanguages().join(", ")}');
+    jsAlert('Default supported languages: ${hljs.listLanguages().join(', ')}');
   });
 
 }

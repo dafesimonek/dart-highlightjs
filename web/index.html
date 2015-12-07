@@ -31,7 +31,7 @@
             import 'dart:html';
             import 'package:js/js.dart';
 
-            @JS("hljs")
+            @JS('hljs')
             external Hljs get hljs;
 
             @JS()
@@ -42,15 +42,15 @@
             }
 
             void main() {
-              var highlighter = querySelector('#highlight') as ButtonElement;
-              var showLanguages = querySelector('#showLanguages') as ButtonElement;
+              ButtonElement highlighter = querySelector('#highlight');
+              ButtonElement showLanguages = querySelector('#showLanguages');
 
               highlighter.onClick.listen((evt) {
                 hljs.initHighlighting();
               });
 
               showLanguages.onClick.listen((evt) {
-                window.alert('Default supported languages: ${hljs.listLanguages().join(", ")}');
+                window.alert('Default supported languages: ${hljs.listLanguages().join(', ')}');
               });
             }
 

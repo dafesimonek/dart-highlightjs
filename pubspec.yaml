@@ -1,6 +1,6 @@
-name: 'jsinterop'
+name: 'dart-highlightjs'
 version: 0.0.1
-description: An absolute bare-bones web app.
+description: Simple example of Dart 1.13+ js interop, calling into highlightjs.org library API.
 #author: Your Name <email@example.com>
 #homepage: https://www.example.com
 
