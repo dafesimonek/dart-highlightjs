@@ -1,2 +1,2 @@
 # dart-highlightjs
-Live demo of dart to highlightjs.org API integration, dart code transpilled to js
+[Live demo](http://dafesimonek.github.io/dart-highlightjs/) of dart to highlightjs.org API integration, dart code transpilled to js
