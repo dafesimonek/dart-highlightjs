@@ -1,4 +1,4 @@
-name: 'dart-highlightjs'
+name: 'dart_highlightjs'
 version: 0.0.1
 description: Simple example of Dart 1.13+ js interop, calling into highlightjs.org library API.
 #author: Your Name <email@example.com>
